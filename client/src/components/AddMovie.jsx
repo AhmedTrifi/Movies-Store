@@ -18,6 +18,7 @@ function AddMovie() {
             alert(response.data.message)
             navigate("/")
         })
+        .catch(err=>{console.log(err)})
     }
     return (
         <div className="container">

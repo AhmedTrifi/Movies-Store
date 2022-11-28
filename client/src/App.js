@@ -22,12 +22,12 @@ function App() {
                  <AddMovie />
              }
           />
-          <Route
+          {/* <Route
             path="/:id"
             element={
                 <OneMovie />
             }
-          />
+          /> */}
         </Routes>
        </div>
     </BrowserRouter>
