@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 3070
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(__dirname + "/../client/public"));
-app.use('/',movieRoute)
+app.use('/movie',movieRoute)
 
 
 app.listen(PORT, function () {
