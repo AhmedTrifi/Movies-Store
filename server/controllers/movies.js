@@ -29,9 +29,15 @@ module.exports ={
           }
     },
     deleteMovie :  (req, res)=>{
-        
+        try {
+            Movie.deleteOne({_id:req.params.id})
+            res.status(201).json({message:"Movie deleted successfully"})
+          } catch (error) {
+              res.status(400).json({message:"something went wrong"})
+              console.log(error)
+          }
     },
     updateMovie :  (req, res)=>{
-
+        
     },
 }
