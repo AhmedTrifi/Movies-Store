@@ -38,6 +38,12 @@ module.exports ={
           }
     },
     updateMovie :  (req, res)=>{
-        
+        try {
+            Movie.findByIdAndUpdate({_id:req.params.id},req.body)
+           res.status(201).json({message:"Movie updated successfully"})
+         } catch (error) {
+             res.status(400).json({message:"something went wrong"})
+             console.log(error)
+         }
     },
 }
