@@ -1,9 +1,9 @@
 import React from 'react'
 import { useState } from 'react'
 import axios from 'axios'
-import useNavigate from 'react-router-dom'
+import {useNavigate} from 'react-router-dom'
 function AddMovie() {
-    [form, setForm] = useState({})
+  const  [form, setForm] = useState({})
     const navigate =useNavigate()
     const onchangeHandler=(e)=>{
         setForm({
