@@ -12,13 +12,15 @@ module.exports ={
     },
     getMovies :  (req, res)=>{
         try {
-          
+          const data = Movie.find()
+          res.status(201).json(data)
         } catch (error) {
-            
+            res.status(400).json({message:"something went wrong"})
+            console.log(error)
         }
     },
     getOneMovie :  (req, res)=>{
-
+        
     },
     deleteMovie :  (req, res)=>{
 
