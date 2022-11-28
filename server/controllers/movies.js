@@ -2,10 +2,20 @@ const Movie = require('../models/movie')
 
 module.exports ={
     addMovie :  (req, res)=>{
-
+        try {
+            Movie.create(req.body)
+            res.status(201).json({message:"your movie review added successfuly" })
+        } catch (error) {
+            res.status(400).json({message:"error creating movie review"})
+            console.log(error)
+        }
     },
     getMovies :  (req, res)=>{
-
+        try {
+          
+        } catch (error) {
+            
+        }
     },
     getOneMovie :  (req, res)=>{
 
