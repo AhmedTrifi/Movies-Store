@@ -20,10 +20,16 @@ module.exports ={
         }
     },
     getOneMovie :  (req, res)=>{
-        
+        try {
+            const data = Movie.findOne({_id:req.params.id})
+            res.status(201).json(data)
+          } catch (error) {
+              res.status(400).json({message:"something went wrong"})
+              console.log(error)
+          }
     },
     deleteMovie :  (req, res)=>{
-
+        
     },
     updateMovie :  (req, res)=>{
 
