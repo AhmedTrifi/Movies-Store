@@ -1,6 +1,7 @@
 const express = require('express');
 const db = require ('./config/db')
 const movieRoute = require('./routes/movies')
+const userRourte = require('./routes/users')
 const cors = require('cors')
 require("dotenv").config();
 const app = express();
@@ -10,6 +11,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(__dirname + "/../client/public"));
 app.use('/movie',movieRoute)
+app.use('/user',userRourte)
 
 app.use(cors())
 
