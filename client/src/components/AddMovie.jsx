@@ -2,6 +2,8 @@ import React from 'react'
 import { useState } from 'react'
 import axios from 'axios'
 import {useNavigate} from 'react-router-dom'
+import Header from './Header'
+ 
 function AddMovie() {
   const  [form, setForm] = useState({})
     const navigate =useNavigate()
@@ -16,12 +18,15 @@ function AddMovie() {
         axios.post("/movie/addMovie",form)
         .then(response=>{
             alert(response.data.message)
-            navigate("/")
+            navigate("/home")
         })
         .catch(err=>{console.log(err)})
     }
     return (
+        <div>   
+                        <Header />     
         <div className="container">
+
             <form onSubmit={submitHundler}>
                 <div class="form-group">
                     <label for="name">name</label>
@@ -50,6 +55,8 @@ function AddMovie() {
                 <button type="submit" class="btn btn-primary" >Submit</button>
             </form>
         </div>
+        </div>
+
     )
 }
 

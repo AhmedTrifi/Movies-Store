@@ -1,25 +1,32 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+import "./movies.css"
 
-function OneMovie({ name, image, description, gender }) {
-    console.log("----------",name,image,description, );
+function OneMovie({ name, image, description, gender, Id, Delete }) {
 
     return (
-        <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src={image} alt="Card image cap" />
-            <div class="card-body">
+
+        <div class="card" >
+            <img src={image} alt="Avatar"
+                style={{ width: "100%" }} />
+            <div class="container">
+
                 <h5 class="card-title">{name}</h5>
 
-            </div>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item">{description}</li>
-                <li class="list-group-item">{gender}</li>
 
-            </ul>
-            <div class="card-body">
-                <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a>
+                <p class="list-group-item">{description}</p>
+                <hr />
+                <p class="list-group-item">{gender}</p>
+                <hr />
+                <Link className="button" to={`/${Id}`}>
+                    Edit
+                </Link>
+                <button class="button1" onClick={() => Delete(Id)}>Delete </button>
             </div>
-        </div>)
+
+
+        </div >
+    )
 }
 
 export default OneMovie
